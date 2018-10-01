@@ -1,0 +1,97 @@
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.bss_baidupush">
+    <uses-sdk
+      android:minSdkVersion="16"
+      android:targetSdkVersion="24" />
+    <!-- Push service runs the required permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- Rich media needs to declare permissions -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+
+    <!-- Adapt the ContentProvider write permission statement required by the Android N system, and the write permission includes the application package name.-->
+    <application android:allowBackup="true" android:label="@string/app_name"
+                 android:supportsRtl="true">
+
+      <!-- Push rich media, use rich media push must declare -->
+      <activity
+        android:name="com.baidu.android.pushservice.richmedia.MediaViewActivity"
+        android:configChanges="orientation|keyboardHidden"
+        android:label="MediaViewActivity"></activity>
+      <activity
+        android:name="com.baidu.android.pushservice.richmedia.MediaListActivity"
+        android:configChanges="orientation|keyboardHidden"
+        android:label="MediaListActivity"
+        android:launchMode="singleTask"></activity>
+      <!-- Push rich media end -->
+
+      <!-- Push application definition message receiver declaration -->
+      <receiver android:name="com.bss_baidupush.MyPushMessageReceiver">
+        <intent-filter>
+
+          <!-- Receive push message -->
+          <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+          <!-- Receive feedback messages such as bind, unbind, fetch, delete, etc. -->
+          <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+          <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+        </intent-filter>
+      </receiver>
+
+      <!-- Push must be receviver and service statement -->
+      <receiver
+        android:name="com.baidu.android.pushservice.PushServiceReceiver"
+        android:process=":bdservice_v1">
+        <intent-filter>
+          <action android:name="android.intent.action.BOOT_COMPLETED" />
+          <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+          <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+          <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+          <!--The following four items are optional action statements, which can greatly improve service survival rate and message arrival speed. -->
+          <action android:name="android.intent.action.MEDIA_MOUNTED" />
+          <action android:name="android.intent.action.USER_PRESENT" />
+          <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+          <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+        </intent-filter>
+      </receiver>
+      <receiver
+        android:name="com.baidu.android.pushservice.RegistrationReceiver"
+        android:process=":bdservice_v1">
+        <intent-filter>
+          <action android:name="com.baidu.android.pushservice.action.METHOD" />
+          <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+        </intent-filter>
+        <intent-filter>
+          <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+          <data android:scheme="package" />
+        </intent-filter>
+      </receiver>
+
+      <service
+        android:name="com.baidu.android.pushservice.PushService"
+        android:exported="true"
+        android:process=":bdservice_v1">
+        <intent-filter>
+          <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />
+        </intent-filter>
+      </service>
+      <service
+        android:name="com.baidu.android.pushservice.CommandService"
+        android:exported="true" />
+
+    </application>
+
+
+  </manifest>
+
