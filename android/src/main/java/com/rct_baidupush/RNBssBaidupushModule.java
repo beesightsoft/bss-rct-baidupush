@@ -48,13 +48,11 @@ public class RNBssBaidupushModule extends ReactContextBaseJavaModule {
   }
 
   public void initialise(){
-    Log.d("initialise", Utils.getMetaValue(getReactApplicationContext(), "api_key"));
     PushManager.startWork(getReactApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY,Utils.getMetaValue(getReactApplicationContext(), "api_key"));
   }
 
   public void sendMsg(String title,String description,String customContentString,String type){
 
-    Log.d("sendMsg", "sendMsg");
     WritableMap params = Arguments.createMap();
     params.putString("title",title);
     params.putString("description",description);
@@ -72,12 +70,9 @@ public class RNBssBaidupushModule extends ReactContextBaseJavaModule {
     reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
   }
 
-  //恢复推送
   @ReactMethod
   public void getChannelId(Promise promise){
     try {
-      Log.d("RNMyLibraryModult", "oooooooo");
-      Log.d("RNMyLibraryModult", RNBssBaidupushModule.channelId);
 
       promise.resolve(RNBssBaidupushModule.channelId);
 

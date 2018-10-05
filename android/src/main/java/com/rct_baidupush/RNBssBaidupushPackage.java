@@ -21,7 +21,6 @@ public class RNBssBaidupushPackage implements ReactPackage {
       return modules;
     }
 
-    // Deprecated from RN 0.47
     public List<Class<? extends JavaScriptModule>> createJSModules() {
       return Collections.emptyList();
     }

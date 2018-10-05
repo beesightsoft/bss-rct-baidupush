@@ -37,7 +37,7 @@
       <!-- Push rich media end -->
 
       <!-- Push application definition message receiver declaration -->
-      <receiver android:name="com.rct_baidupush.MyPushMessageReceiver">
+      <receiver android:name="com.rct_baidupush.BaiduPushMessageReceiver">
         <intent-filter>
 
           <!-- Receive push message -->

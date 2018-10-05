@@ -11,7 +11,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 public class Utils {
   public static final String TAG = "PushDemoActivity";
@@ -27,7 +26,6 @@ public class Utils {
 
   public static String logStringCache = "";
 
-  // 获取ApiKey
   public static String getMetaValue(Context context, String metaKey) {
     Bundle metaData = null;
     String apiKey = null;
@@ -45,7 +43,6 @@ public class Utils {
         apiKey = metaData.getString(metaKey);
       }
     } catch (NameNotFoundException e) {
-      Log.e(TAG, "error " + e.getMessage());
     }
     return apiKey;
   }
@@ -72,14 +69,12 @@ public class Utils {
   public static String getLogText(Context context) {
     SharedPreferences sp = PreferenceManager
       .getDefaultSharedPreferences(context);
-    return sp.getString("log_text", "");
   }
 
   public static void setLogText(Context context, String text) {
     SharedPreferences sp = PreferenceManager
       .getDefaultSharedPreferences(context);
     Editor editor = sp.edit();
-    editor.putString("log_text", text);
     editor.commit();
   }
 
