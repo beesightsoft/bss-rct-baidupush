@@ -2,6 +2,7 @@
 {
   "name": "@beesight/rct-baidupush",
   "version": "1.0.0",
+  "private": false,
   "description": "",
   "main": "index.js",
   "scripts": {
