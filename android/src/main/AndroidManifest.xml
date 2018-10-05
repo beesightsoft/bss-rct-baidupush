@@ -1,6 +1,6 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.bss_baidupush">
+          package="com.rct_baidupush">
     <uses-sdk
       android:minSdkVersion="16"
       android:targetSdkVersion="24" />
@@ -37,7 +37,7 @@
       <!-- Push rich media end -->
 
       <!-- Push application definition message receiver declaration -->
-      <receiver android:name="com.bss_baidupush.MyPushMessageReceiver">
+      <receiver android:name="com.rct_baidupush.MyPushMessageReceiver">
         <intent-filter>
 
           <!-- Receive push message -->

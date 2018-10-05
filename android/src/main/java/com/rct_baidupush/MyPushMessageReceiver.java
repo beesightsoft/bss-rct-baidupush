@@ -1,4 +1,4 @@
-package com.bss_baidupush;
+package com.rct_baidupush;
 
 import android.app.ActivityManager;
 import android.content.ComponentName;

@@ -81,7 +81,7 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import com.bss_baidupush.RNBssBaidupushPackage;` to the imports at the top of the file
+  - Add `import com.rct_baidupush.RNBssBaidupushPackage;` to the imports at the top of the file
   - Add `new RNBssBaidupushPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```

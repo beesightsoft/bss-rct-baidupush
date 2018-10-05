@@ -1,5 +1,5 @@
 
-package com.bss_baidupush;
+package com.rct_baidupush;
 
 import android.support.annotation.Nullable;
 import android.util.Log;
