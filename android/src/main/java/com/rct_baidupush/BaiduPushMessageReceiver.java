@@ -15,7 +15,6 @@ import java.util.List;
 
 public class BaiduPushMessageReceiver extends PushMessageReceiver {
 
-
   @Override
   public void onBind(Context context, int errorCode, String appid,
                      String userId, String channelId, String requestId) {

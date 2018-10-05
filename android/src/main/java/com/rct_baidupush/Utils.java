@@ -46,36 +46,4 @@ public class Utils {
     }
     return apiKey;
   }
-
-  public static List<String> getTagsList(String originalText) {
-    if (originalText == null || originalText.equals("")) {
-      return null;
-    }
-    List<String> tags = new ArrayList<String>();
-    int indexOfComma = originalText.indexOf(',');
-    String tag;
-    while (indexOfComma != -1) {
-      tag = originalText.substring(0, indexOfComma);
-      tags.add(tag);
-
-      originalText = originalText.substring(indexOfComma + 1);
-      indexOfComma = originalText.indexOf(',');
-    }
-
-    tags.add(originalText);
-    return tags;
-  }
-
-  public static String getLogText(Context context) {
-    SharedPreferences sp = PreferenceManager
-      .getDefaultSharedPreferences(context);
-  }
-
-  public static void setLogText(Context context, String text) {
-    SharedPreferences sp = PreferenceManager
-      .getDefaultSharedPreferences(context);
-    Editor editor = sp.edit();
-    editor.commit();
-  }
-
 }
