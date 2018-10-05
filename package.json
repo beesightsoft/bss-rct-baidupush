@@ -1,6 +1,6 @@
 
 {
-  "name": "react-native-bss-baidupush",
+  "name": "@beesight/rct-baidupush",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

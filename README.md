@@ -1,13 +1,13 @@
 
-# react-native-bss-baidupush
+# rct-baidupush
 
 ## Getting started
 
-`$ npm install react-native-bss-baidupush --save`
+`$ npm install rct-baidupush --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-bss-baidupush`
+`$ react-native link rct-baidupush`
 
 ### Manual installation
 
@@ -15,7 +15,7 @@
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-bss-baidupush` and add `RNBssBaidupush.xcodeproj`
+2. Go to `node_modules` ➜ `rct-baidupush` and add `RNBssBaidupush.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNBssBaidupush.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Open up your `AppDelegate.m` 
   - Add '#import "RNBssBaidupush.h"'
@@ -85,12 +85,12 @@
   - Add `new RNBssBaidupushPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-bss-baidupush'
-  	project(':react-native-bss-baidupush').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-bss-baidupush/android')
+  	include ':rct-baidupush'
+  	project(':rct-baidupush').projectDir = new File(rootProject.projectDir, 	'../node_modules/rct-baidupush/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-bss-baidupush')
+      compile project(':rct-baidupush')
   	```
 4. Open up `android/app/src/main/AndroidManifest.xml` add permissions
       ```
@@ -136,7 +136,7 @@
       ```
 ## Usage
 ```javascript
-      import RNBssBaidupush from 'react-native-bss-baidupush';
+      import RNBssBaidupush from 'rct-baidupush';
 
 ```
 
