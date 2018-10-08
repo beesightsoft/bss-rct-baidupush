@@ -5,11 +5,7 @@
 
 `$ npm install @beesight/rct-baidupush --save`
 
-### Mostly automatic installation
-
-`$ react-native link @beesight/rct-baidupush`
-
-### Manual installation
+### Manual link
 
 
 #### iOS
@@ -17,6 +13,10 @@
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `@beesight/rct-baidupush` and add `RNBssBaidupush.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNBssBaidupush.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+5. In XCode, in the project navigator, select your project.
+   * Go the `General` tab ➜ `Linked Frameworks and Libraries` ➜ `+` button ➜ `Add Other` ➜ `node_modules/@beesight/rct-baidupush/ios/normalversion` ➜ choose `libBPush.a` .
+   * Look for _Header Search Paths_ and make sure it contains `$(SRCROOT)/../node_modules/@beesight/rct-baidupush/ios` and _Libraries Search Paths_ contains `$(SRCROOT)/../node_modules/@beesight/rct-baidupush/ios/normalversion`
+   * Mark linker in _Libraries Search Paths_  as recursive .
 4. Open up your `AppDelegate.m` 
   - Add '#import "RNBssBaidupush.h"'
   - Register
