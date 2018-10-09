@@ -1,6 +1,6 @@
 {
   "name": "@beesight/rct-baidupush",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "description": "baidu push with react native",
   "main": "index.js",
