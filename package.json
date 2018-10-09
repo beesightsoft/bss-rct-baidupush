@@ -1,6 +1,6 @@
 {
   "name": "@beesight/rct-baidupush",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "description": "baidu push with react native",
   "main": "index.js",
@@ -12,16 +12,13 @@
     "url": "git+https://github.com/beesightsoft/bss-rct-baidupush.git"
   },
   "keywords": [
-    "baidupush"
+    "react-native"
   ],
   "author": "beesightsoft",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/beesightsoft/bss-rct-baidupush/issues"
   },
-  "keywords": [
-    "react-native"
-  ],
   "peerDependencies": {
     "react-native": "^0.41.2",
     "react-native-windows": "0.41.0-rc.1"
