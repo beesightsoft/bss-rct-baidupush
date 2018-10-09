@@ -161,7 +161,7 @@
        })
    ```
    
-## Enviroment
+## Environment
 + react-native: 0.53.0
 + node: 10.0.0
 + npm: 5.6.0
