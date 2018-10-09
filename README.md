@@ -160,3 +160,14 @@
          console.log('ChannelId=' + ChannelId)
        })
    ```
+   
+## Enviroment
++ react-native: 0.53.0
++ node: 10.0.0
++ npm: 5.6.0
++ baidu-push:
+    * Android 5.9.0
+    * IOS 1.5.4
+ + Device test:
+    * Android 6.0
+    * IOS 12.0
