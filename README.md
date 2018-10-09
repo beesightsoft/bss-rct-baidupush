@@ -18,7 +18,8 @@
    * Look for _Header Search Paths_ and make sure it contains `$(SRCROOT)/../node_modules/@beesight/rct-baidupush/ios` and _Libraries Search Paths_ contains `$(SRCROOT)/../node_modules/@beesight/rct-baidupush/ios/normalversion`
    * Mark linker in _Libraries Search Paths_  as recursive .
 4. Open up your `AppDelegate.m` 
-  - Add '#import "RNBssBaidupush.h"'
+  - Add `#import "RNBssBaidupush.h"`
+  - Add `#import <UserNotifications/UserNotifications.h>`
   - Register
     + Replace your_api_key in `your_api_key`
     + Choose mode you want: BPushModeDevelopment or BPushModeProduction in `baidu_Mode`
@@ -27,6 +28,8 @@
      {
      .....
        [RNBssBaidupush registerBaidu:launchOptions application:application apiKey:@"your_api_key" baiduMode:@"baidu_Mode"];
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+         center.delegate = self;
        return YES;
       }
       
